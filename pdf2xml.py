@@ -12,8 +12,7 @@ pdf.tree.write('p1.xml', pretty_print = True)
 pdf
 
 
-
-# Variables
+# Variables to get
 """
 Headers for sheet 
     Gender
@@ -88,10 +87,4 @@ Headers for sheet
         Intelligence
         Strength
         Wisdom
-    
-
-
-
-
-
 """
