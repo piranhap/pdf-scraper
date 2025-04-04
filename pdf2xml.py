@@ -1,3 +1,6 @@
+# This code loads a desired pdf and converts it to xml so you can look at the document to see what you want to extract.
+
+
 from pdfquery import PDFQuery
 
 # load the pdf
