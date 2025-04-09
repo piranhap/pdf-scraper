@@ -59,6 +59,8 @@ car_model= pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 173.911, 166.734, 181.4
 
 car_plate_raw = pdf.pq('LTTextBoxHorizontal:contains("issued in")').text()
 
+  config.vm.synced_folder "C:\Users\dmunoz\Documents\Virtual Machines\Share", "/Share"
+
 # Extract from car_plate_raw
 car_match = re.findall(
     r"(?P<platenumber>[A-Z0-9\-]+) - issued in (?P<state_issued>[A-Za-z\s]+(?:\s\([A-Z]{2}\))?) in year (?P<date_issued>\d{4})",
