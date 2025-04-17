@@ -1,16 +1,20 @@
+################################
 # imports and variables
 ################################
 from pdfquery import PDFQuery
 import re
 import pandas as pd
 
+
 pdf = PDFQuery('p1.pdf')
 pdf.load()
+
 ################################
 
 #Data Collection 
 
 ################################
+
 gender = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 496.411, 117.541, 503.911")').text()
 m_name = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 470.911, 120.321, 478.411")').text()
 l_name = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 458.161, 130.465, 465.661")').text()
@@ -29,10 +33,6 @@ email = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 305.911, 263.139, 313.411"
 phone = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 293.161, 147.992, 300.661")').text()
 address = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 280.411, 266.242, 287.911")').text()
 ssn = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 254.911, 226.764, 262.411")').text()
-#passport_n = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 242.161, 154.664, 249.661")').text()
-#passport_issued_date = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 233.911, 190.923, 241.411")').text()
-#passport_exp_date = pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 225.661, 193.42, 233.161")').text()
-#passport_code = str(pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 217.118, 282.721, 224.618]")')).text()
 
 
 drivers_license_raw = pdf.pq('LTTextBoxHorizontal:contains("issued in")').text()
@@ -58,8 +58,6 @@ car_model= pdf.pq('LTTextBoxHorizontal:in_bbox("101.285, 173.911, 166.734, 181.4
 
 
 car_plate_raw = pdf.pq('LTTextBoxHorizontal:contains("issued in")').text()
-
-  config.vm.synced_folder "C:\Users\dmunoz\Documents\Virtual Machines\Share", "/Share"
 
 # Extract from car_plate_raw
 car_match = re.findall(
