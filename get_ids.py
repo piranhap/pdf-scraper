@@ -1,5 +1,14 @@
 import requests
 import json
 
-response = requests.get(url="https://businer.com/fakeid.php?gender=r")
-print(response.t
+
+url = "https://businer.com/fakeid.php?gender=r"
+
+response = requests.get(url=url)
+# print(response.headers) # Type is text/html, charset iso-8859-1
+
+
+
+
+# print(response.text)
+ 
