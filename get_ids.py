@@ -1,4 +1,5 @@
 import requests
+import json
 
-response = requests.get('<https://businer.com/fakeid.php>')
-print(response)
+response = requests.get(url="https://businer.com/fakeid.php?gender=r")
+print(response.t
